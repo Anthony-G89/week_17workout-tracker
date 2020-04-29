@@ -7,13 +7,13 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongod://localhost/fitness_tracker",{
-    useNewUrlParser: true,
-    useFindAndModify: false
+mongoose.connect("mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 // ADD MY ROUTE LATER
-// app.use(require(""));
+app.use(require("./routes/html-routes"));
 
 
 app.listen(PORT, ()=>{

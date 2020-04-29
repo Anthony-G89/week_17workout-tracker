@@ -11,4 +11,18 @@ router.post("/api/workouts", ({ body }, res) => {
             res.status(400).json(err);
         });
 
+
+        // add delete route
+        router.delete("/api/workout", ({body}, res)=>{
+            workout.findByIdAndDelete(body.id)
+            .then(data =>{
+                res.json(true)
+            })
+            .catch(err =>{
+                res.json(err);
+            });
+        });
+
 });
+
+module.exports = router;
