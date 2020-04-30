@@ -26,9 +26,9 @@ and view multiple the combined weight of multiple exercises on the `stats` page.
 
  ## Screen Shots of App
 
- ![addExercise](/public/imgs/home_fitness_tracker.png)
+ ![home](/public/imgs/home_fitness_tracker.png)
 
- ![home](/public/imgs/add_exercise_fitness.png)
+ ![addExercise](/public/imgs/add_exercise_fitness.png)
 
  ![stats](/public/imgs/stats_fitness.png)
 
