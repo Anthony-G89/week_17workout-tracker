@@ -22,15 +22,13 @@ router.get("/api/workouts", (body, res) => {
         });
 });
 
-
-// add delete route
-router.delete("/api/workout", ({ body }, res) => {
-    workout.findByIdAndDelete(body.id)
+router.get("/api/workouts/range", (req, res) => {
+    workout.find().limit(2)
         .then(data => {
             res.json(data)
         })
         .catch(err => {
-            res.json(err);
+            res.status(400).json(err);
         });
 });
 
@@ -46,6 +44,17 @@ router.put("/api/workouts/:id", (req, res) => {
         .catch(err => {
             res.json(err);
         });
-})
+});
+
+// add delete route
+router.delete("/api/workout", ({ body }, res) => {
+    workout.findByIdAndDelete(body.id)
+        .then(data => {
+            res.json(data)
+        })
+        .catch(err => {
+            res.json(err);
+        });
+});
 
 module.exports = router;
