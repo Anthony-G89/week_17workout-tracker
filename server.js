@@ -13,6 +13,7 @@ mongoose.connect("mongodb://localhost/workout", {
 });
 
 // ADD MY ROUTE LATER
+app.use(require("./routes/api"));
 app.use(require("./routes/html-routes"));
 
 

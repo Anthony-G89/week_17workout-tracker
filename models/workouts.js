@@ -26,19 +26,19 @@ const workoutSchema = new Schema({
             },
             weight: {
                 type: Number,
-                required: "How many lbs"
+                
             },
             reps: {
                 type: Number,
-                required: "How many reps did you do"
+                
             },
             sets: {
                 type: Number,
-                required: "How many sets did you do"
+                
             },
             distance: {
                 type: Number,
-                required: "How many miles did you run"
+                
             },
 
 
@@ -46,7 +46,22 @@ const workoutSchema = new Schema({
     ]
 
 
-});
+},
+{
+    toJSON: {
+      // include any virtual properties when data is requested
+      virtuals: true
+    }
+  }
+);
+// adds a dynamically-created property to schema
+workoutSchema.virtual("totalDuration").get(function () {
+    // "reduce" array of exercises down to just the sum of their durations
+    return this.exercises.reduce((total, exercise) => {
+      return total + exercise.duration;
+    }, 0);
+  });
+
 
 const workouts = mongoose.model("workouts", workoutSchema);
 
