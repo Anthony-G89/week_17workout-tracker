@@ -16,7 +16,8 @@ and view multiple the combined weight of multiple exercises on the `stats` page.
 ```
 
 ## Table of Contents
- none
+ * [Questions](#questions)
+
 
  ## Installation
 ```
